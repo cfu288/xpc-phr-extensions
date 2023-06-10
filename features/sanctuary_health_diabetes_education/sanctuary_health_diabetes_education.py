@@ -57,7 +57,13 @@ class SanctuaryHealthDiabetesEducationHandler:
         result = self.client.execute(query)
          # Fake patient data, use this
         if req.contexts.get(fhirService.fhirServer).diagnosticReportId in set(
-            ["TeOs2UvPrb0X2j3quRbvpAnIv8HVpc3MfPHsTs5MXbxQB"]
+          [
+            "TeOs2UvPrb0X2j3quRbvpAnIv8HVpc3MfPHsTs5MXbxQB",
+            "TP2hYGwg-.5LFT84WduGn8qWmQp80d66Br.bZT.okcu4B",
+            "TgnIbHY714d5JDcg.iIiVQKhJHnxeIO4rrV03bq1W5VQB1",
+            "T8A7CSOhucBPc2wJxlHlS4gB",
+            "TgnIbHY714d5JDcg.iIiVQKhJHnxeIO4rrV03bq1W5VQB"
+          ]
         ):
           return [
               {
