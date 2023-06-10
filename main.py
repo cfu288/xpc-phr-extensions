@@ -22,7 +22,7 @@ from features.sanctuary_health_diabetes_education.sanctuary_health_diabetes_educ
 
 load_dotenv()
 is_development = os.getenv("ENVIRONMENT") == "development"
-rp = "" if is_development else "kps-ivs-rkf"
+rp = "" if is_development else "/kps-ivs-rkf"
 print(is_development)
 
 app = FastAPI(root_path=rp)
