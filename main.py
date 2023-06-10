@@ -25,7 +25,7 @@ is_development = os.getenv("ENVIRONMENT") == "development"
 rp = "" if is_development else "/kps-ivs-rkf"
 print(is_development)
 
-app = FastAPI(root_path=rp)
+app = FastAPI(root_path="/kps-ivs-rkf")
 app.mount("/assets", StaticFiles(directory="assets"), name="assets")
 app.add_middleware(
     CORSMiddleware,
