@@ -1,3 +1,6 @@
+import os
+from dotenv import load_dotenv
+
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
@@ -17,7 +20,12 @@ from features.sanctuary_health_diabetes_education.sanctuary_health_diabetes_educ
     SanctuaryHealthDiabetesEducationHandler,
 )
 
-app = FastAPI()
+load_dotenv()
+is_development = os.getenv("ENVIRONMENT") == "development"
+rp = "" if is_development else "kps-ivs-rkf"
+print(is_development)
+
+app = FastAPI(root_path=rp)
 app.mount("/assets", StaticFiles(directory="assets"), name="assets")
 app.add_middleware(
     CORSMiddleware,
