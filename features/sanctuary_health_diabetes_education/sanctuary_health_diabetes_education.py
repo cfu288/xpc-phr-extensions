@@ -6,6 +6,7 @@ from features.sanctuary_health_diabetes_education.models.SanctuaryHealthDiabetes
     SanctuaryHealthDiabetesEducationRequest,
 )
 from python_graphql_client import GraphqlClient
+import time
 
 # fmt: off
 query = gql('''
@@ -54,18 +55,23 @@ class SanctuaryHealthDiabetesEducationHandler:
 
 
         result = self.client.execute(query)
-        return [
-            {
-                "summary": "Patient Education - " + result.get("getPosts")[0].get("title"),
-                "detail": result.get("getPosts")[0].get("description"),
-                "indicator": "info",
-                "source": {"label": "Sanctuary Health", "url": "https://docs.sanctuaryhealth.io/", "icon": "https://app.sanctuaryhealth.io/static/media/SanctuaryLogo.aefca1806c2c652b26b79c29e6993e1d.svg"},
-                "links": [
-                    {
-                        "label": "Video",
-                        "url": result.get("getPosts")[0].get("mediaFileDetailsList")[0].get("file").get("url"),
-                        "type": "absolute",
-                    }
-                ],
-            }
-        ]
+         # Fake patient data, use this
+        if req.contexts.get(fhirService.fhirServer).diagnosticReportId in set(
+            ["TeOs2UvPrb0X2j3quRbvpAnIv8HVpc3MfPHsTs5MXbxQB"]
+        ):
+          return [
+              {
+                  "summary": "Patient Education - " + result.get("getPosts")[0].get("title"),
+                  "detail": result.get("getPosts")[0].get("description"),
+                  "indicator": "info",
+                  "source": {"label": "Sanctuary Health", "url": "https://docs.sanctuaryhealth.io/", "icon": "https://app.sanctuaryhealth.io/static/media/SanctuaryLogo.aefca1806c2c652b26b79c29e6993e1d.svg"},
+                  "links": [
+                      {
+                          "label": "Video",
+                          "url": result.get("getPosts")[0].get("mediaFileDetailsList")[0].get("file").get("url"),
+                          "type": "absolute",
+                      }
+                  ],
+              }
+          ]
+        return []

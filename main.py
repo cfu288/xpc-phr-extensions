@@ -11,6 +11,9 @@ from features.cds_services_discovery_handler.cds_services_discovery_handler impo
 from features.cds_services_discovery_handler.models.CDSServicesDiscoveryResponse import (
     CDSServicesDiscoveryResponse,
 )
+from features.diabetes_ai_advisor.diabetes_ai_advisor_handler import (
+    DiabetesAIAdvisorHandler,
+)
 
 from features.root.root_handler import RootHandler
 from features.sanctuary_health_diabetes_education.models.SanctuaryHealthDiabetesEducationRequest import (
@@ -58,5 +61,14 @@ def cds_services_discovery():
     tags=["hooks"],
 )
 def cds_services_discovery(body: SanctuaryHealthDiabetesEducationRequest):
-    print(body)
     return SanctuaryHealthDiabetesEducationHandler().handle(body)
+
+
+@app.post(
+    "/cds-services/diabetes-ai-advisor",
+    # response_model=SanctuaryHealthDiabetesEducationResponse,
+    response_model_exclude_none=True,
+    tags=["hooks"],
+)
+def cds_services_discovery(body: SanctuaryHealthDiabetesEducationRequest):
+    return DiabetesAIAdvisorHandler().handle(body)
