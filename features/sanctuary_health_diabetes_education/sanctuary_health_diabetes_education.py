@@ -96,6 +96,29 @@ class SanctuaryHealthDiabetesEducationHandler:
                           "type": "absolute",
                       },
                   ],
+              },
+                {
+                  "summary": "Schedule your next appointment with Dr. Smith",
+                  "detail": "Here are some available appointments this upcoming week. Click one of the buttons below to create an appointment, we'll transfer your registration data automatically so you can skip the forms at the front desk.",
+                  "indicator": "info",
+                  "source": {"label": "Flight Health", "url": "https://goflighthealth.com/", "icon": "https://files.mari.casa/flight-health.jpeg"},
+                  "links": [
+                      {
+                          "label": "Tuesday, 10:00 am",
+                          "url": "https://www.goflighthealth.com/",
+                          "type": "absolute",
+                      },
+                         {
+                          "label": "Tuesday, 11:00 am",
+                          "url": "https://www.goflighthealth.com/",
+                          "type": "absolute",
+                      },
+                            {
+                          "label": "Tuesday, 12:00 pm",
+                          "url": "https://www.goflighthealth.com/",
+                          "type": "absolute",
+                      },
+                  ],
               }
           ]
         return []
