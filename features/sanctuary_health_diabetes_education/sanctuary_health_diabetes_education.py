@@ -73,10 +73,28 @@ class SanctuaryHealthDiabetesEducationHandler:
                   "source": {"label": "Sanctuary Health", "url": "https://docs.sanctuaryhealth.io/", "icon": "https://app.sanctuaryhealth.io/static/media/SanctuaryLogo.aefca1806c2c652b26b79c29e6993e1d.svg"},
                   "links": [
                       {
-                          "label": "Video",
+                          "label": "Watch our video",
                           "url": result.get("getPosts")[0].get("mediaFileDetailsList")[0].get("file").get("url"),
                           "type": "absolute",
+                      },
+                          {
+                          "label": "Subscribe to our platform",
+                          "url": "https://app.sanctuaryhealth.io/",
+                          "type": "absolute",
                       }
+                  ],
+              },
+              {
+                  "summary": "Find a nutritionist",
+                  "detail": "Personalized, virtual nutrition care from experts you cantrust. Covered by your insurance (really).",
+                  "indicator": "info",
+                  "source": {"label": "Culina Health", "url": "https://culinahealth.com/", "icon": "https://files.mari.casa/culina.webp"},
+                  "links": [
+                      {
+                          "label": "Schedule a free call",
+                          "url": "https://culinahealth.com/",
+                          "type": "absolute",
+                      },
                   ],
               }
           ]

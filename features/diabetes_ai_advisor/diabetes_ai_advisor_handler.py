@@ -74,10 +74,10 @@ class DiabetesAIAdvisorHandler:
             #     ],
             # )
             # print(chat_completion)
-            time.sleep(2)
+            time.sleep(0.5)
             return [
                 {
-                    "summary": "Diabetes AI Advisor - Powered by OpenAI",
+                    "summary": "What to do about an elevated A1c",
                     # "detail": chat_completion.choices[0].text,
                     "detail": """Your A1c values have been increasing over the years, indicating a slight decline in blood sugar control. A higher A1c means poorer blood sugar control. You should:
                     <ul>
@@ -85,44 +85,21 @@ class DiabetesAIAdvisorHandler:
                         <li style="margin-left: 20px; list-style-type: circle;">Review your diabetes management plan and make adjustments if necessary.</li>
                         <li style="margin-left: 20px; list-style-type: circle;">Focus on healthy lifestyle habits like balanced eating, exercise, sleep, stress management, and maintaining a healthy weight.</li>
                     </ul>
-                    </br>
-                    <div style="border-bottom: 1px solid #000;"></div>
-                    </br>
-                    <b>Below are the resources available to you:</b>
-                    </br>
-                    <table>
-                    <thead>
-                    <tr>
-                        <td style="width: 100px"><img src="https://files.mari.casa/virta.png" alt="Virta Health" style="width: 80px"></img></td>
-                        <td>A digital solution to reverses type 2 diabetes and pre-diabetes. <a style="color:blue" href="https://www.virtahealth.com/">Learn more</a></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 100px"><img src="https://files.mari.casa/livongo.png" alt="Livongo" style="width: 80px"></img></td>
-                        <td>Smart management of diabetes with personalized tips and expert coaching. <a style="color:blue" href="https://www.virtahealth.com/">Learn more</a></td>
-                    </tr>
-                    </thead>
-                    </table>
-                    </br>
                     """,
                     "indicator": "info",
                     "source": {
-                        "label": "Diabetes AI Advisor",
-                        "url": "https://openai.com/",
-                        "icon": "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
+                        "label": "Mere AI Advisor",
+                        "url": "https://meremedical.co",
+                        "icon": "https://meremedical.co/img/logo.svg",
                     },
                     "links": [
-                        # {
-                        #     "label": "Virta Health - Schedule a zero dollar enrollment consultation to learn more",
-                        #     "url": "www.example.com",
-                        #     "type": "absolute",
-                        # },
-                        # {
-                        #     "label": "Virta Health - Schedule a zero dollar enrollment consultation to learn more",
-                        #     "url": "www.example.com",
-                        #     "type": "absolute",
-                        # },
+                        {
+                            "label": "Read the CDC fact sheet",
+                            "url": "https://www.cdc.gov/chronicdisease/resources/publications/factsheets/diabetes-prediabetes.htm",
+                            "type": "absolute",
+                        },
                     ],
-                }
+                },
             ]
 
         return []
